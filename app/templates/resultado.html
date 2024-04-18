@@ -1,0 +1,29 @@
+<!-- resultado.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resultado.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cotizacion</h1>
+        <p class="title">Valor del Auto: ${{ '{:,.2f}'.format(valor_auto) }}</p>
+        <p>Entrega Inicial: ${{ '{:,.2f}'.format(entrega_inicial) }}</p>
+        
+        <p class="title">Cuotas para 12 meses:</p>
+        <p>Monto de la Cuota: ${{ '{:,.2f}'.format(monto_cuota_12) }}</p>
+
+        <p class="title">Cuotas para 24 meses:</p>
+        <p>Monto de la Cuota: ${{ '{:,.2f}'.format(monto_cuota_24) }}</p>
+
+        <p class="title">Cuotas para 36 meses:</p>
+        <p>Monto de la Cuota: ${{ '{:,.2f}'.format(monto_cuota_36) }}</p>
+
+        <a href="/">Volver al inicio</a>
+    </div>
+</body>
+</html>

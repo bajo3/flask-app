@@ -1,0 +1,40 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Créditos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cotizador de Créditos</h1>
+        <form action="/calcular" method="post">
+            <label for="valor_auto">Valor del Auto:</label>
+            <!-- Utilizamos un evento JavaScript para formatear el número al escribir -->
+            <input type="text" id="valor_auto" name="valor_auto" required oninput="formatNumber(this)">
+            
+            <button type="submit">Calcular</button>
+        </form>
+    </div>
+
+    <script>
+        // Función para formatear el número con comas
+        function formatNumber(input) {
+            // Obtener el valor del input
+            let value = input.value;
+
+            // Remover cualquier coma existente
+            value = value.replace(/,/g, '');
+
+            // Formatear el número con comas
+            value = parseFloat(value).toLocaleString('en-US');
+
+            // Actualizar el valor del input
+            input.value = value;
+        }
+    </script>
+</body>
+</html>
